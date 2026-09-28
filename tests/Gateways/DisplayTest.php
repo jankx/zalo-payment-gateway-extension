@@ -41,7 +41,7 @@ class DisplayTest extends TestCase
     {
         $display = (new ZaloPayGateway())->getDisplay();
 
-        $this->assertSame(AbstractGateway::SHOW_ICON, $display['type']);
+        $this->assertSame(AbstractGateway::SHOW_ICON_TEXT, $display['type']);
         $this->assertStringContainsString('<svg', $display['icon']);
         $this->assertStringContainsString('0068FF', $display['icon']);
         $this->assertSame('ZaloPay', $display['text']);
@@ -86,7 +86,7 @@ class DisplayTest extends TestCase
     public function test_display_type_and_position_filters_apply()
     {
         add_filter('jankx/payment/gateway/zalopay/display_type', function () {
-            return AbstractGateway::SHOW_ICON_TEXT;
+            return AbstractGateway::SHOW_ICON;
         });
         add_filter('jankx/payment/gateway/zalopay/icon_position', function () {
             return AbstractGateway::ICON_RIGHT;
@@ -94,7 +94,7 @@ class DisplayTest extends TestCase
 
         $display = (new ZaloPayGateway())->getDisplay();
 
-        $this->assertSame(AbstractGateway::SHOW_ICON_TEXT, $display['type']);
+        $this->assertSame(AbstractGateway::SHOW_ICON, $display['type']);
         $this->assertSame(AbstractGateway::ICON_RIGHT, $display['icon_position']);
     }
 
