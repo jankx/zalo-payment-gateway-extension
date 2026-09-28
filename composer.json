@@ -1,0 +1,26 @@
+{
+    "name": "jankx/zalopay-payment-gateway",
+    "description": "ZaloPay payment gateway extension for Jankx Payment System",
+    "type": "wordpress-extension",
+    "require-dev": {
+        "phpunit/phpunit": "^9.5",
+        "brain/monkey": "^2.6",
+        "mockery/mockery": "^1.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Jankx\\Extensions\\Zalopay\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Jankx\\Extensions\\Zalopay\\Tests\\": "tests/"
+        }
+    },
+    "config": {
+        "vendor-dir": "libs",
+        "allow-plugins": {
+            "php-http/discovery": false
+        }
+    }
+}

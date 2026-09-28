@@ -1,0 +1,16 @@
+{
+    "name": "ZaloPay Payment Gateway",
+    "description": "ZaloPay payment gateway for the payment-system extension. Redirects the customer to the ZaloPay gateway (order_url) and reconciles the result via the ZaloPay OpenAPI (v2).",
+    "version": "1.0.0",
+    "author": "Jankx",
+    "extension_id": "zalopay-payment-gateway",
+    "caller": {
+        "file": "ZalopayPaymentGatewayExtension.php",
+        "class": "Jankx\\Extensions\\Zalopay\\ZalopayPaymentGatewayExtension"
+    },
+    "requirements": {
+        "php": ">=8.0"
+    },
+    "context": ["admin", "frontend", "rest", "ajax"],
+    "auto_activate": true
+}
